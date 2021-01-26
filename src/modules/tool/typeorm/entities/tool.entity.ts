@@ -9,7 +9,7 @@ import {
 @Entity()
 export class Tool {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @Column({ type: 'varchar', length: 50 })
   title: string;
