@@ -17,7 +17,7 @@ export class Tool {
   @Column({ type: 'varchar', length: 500 })
   link: string;
 
-  @Column({ type: 'text', length: 5000 })
+  @Column({ type: 'text' })
   description: string;
 
   @Column({ type: 'simple-array' })
