@@ -5,14 +5,14 @@ import { AuthModule } from './auth/auth.module';
 import { ToolModule } from './tool/tool.module';
 import { UserModule } from './user/user.module';
 
-import { typeOrmConfig } from 'src/configs/postgres/typeorm-configs';
+import { configPostgresDatabase } from 'src/configs/typeorm/config-database';
 
 @Module({
   imports: [
     AuthModule,
     UserModule,
     ToolModule,
-    TypeOrmModule.forRoot(typeOrmConfig),
+    TypeOrmModule.forRoot(configPostgresDatabase),
   ],
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { ConnectionOptions } from 'typeorm';
 
-export const typeOrmConfig: ConnectionOptions = {
+export const configPostgresDatabase: ConnectionOptions = {
   name: 'default',
   type: 'postgres',
   host: process.env.DB_HOST,
