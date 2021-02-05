@@ -1,6 +1,6 @@
-import { ConnectionOptions } from 'typeorm';
+require('dotenv/config');
 
-export const typeOrmConfig: ConnectionOptions = {
+export = {
   name: 'default',
   type: 'postgres',
   host: process.env.DB_HOST,
@@ -9,11 +9,15 @@ export const typeOrmConfig: ConnectionOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   entities: ['dist/**/*.entity{ .ts,.js}'],
-  migrations: ['dist/migrations/*{.ts,.js}'],
+  migrations: ['dist/database/migrations/*{.ts,.js}'],
   migrationsTableName: 'migrations_typeorm',
   synchronize: false,
   migrationsRun: true,
   logging: true,
   logger: 'file',
   ssl: false,
+  cli: {
+    entitiesDir: 'dist/**/*.entity{ .ts,.js}',
+    migrationsDir: 'src/database/migrations',
+  },
 };
